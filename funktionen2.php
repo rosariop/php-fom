@@ -1,4 +1,4 @@
-k k<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,7 @@ k k<!DOCTYPE html>
         $sum = 0;
         $prod = 0;
         math(3,4,$sum, $prod);
+
         echo "Summe aus 3 u. 4: " . $sum;
         echo "<br/>";
         echo "Produkt aus 3 u. 4: " . $prod;
