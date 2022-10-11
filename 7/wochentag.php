@@ -12,7 +12,7 @@
 
         if($date > 5){
             echo "Schönes Wochenende";
-        } {
+        } else {
             echo "Schönen Arbeitstag to looser!";
         }
     ?>
