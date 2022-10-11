@@ -9,20 +9,36 @@
 <body>
     <?php
         class Fahrzeug {
-            public string $name;
+            public string $farbe;
             public string $hersteller;
+            private bool $gestartet = false;
 
-            function __construct(string $name,string $hersteller){
-                $this->name = $name;
+            function __construct(string $farbe,string $hersteller){
+                $this->farbe = $farbe;
                 $this->hersteller = $hersteller;
+            }
+
+            public function starten(){
+                $this->gestartet = true;
+                echo "gestartet: " . $this->gestartet;;
+            }
+
+            public function stoppen(){
+                $this->gestartet = false;
+                echo "gestoppt: " . $this->gestartet;
             }
         }
 
         $auto1 = new Fahrzeug("Brummi", "Mercedes");
-
         echo "<h1>" . 
-            $auto1->name 
-        . "</h1>"
-    ?>
+            $auto1->farbe 
+        . "</h1>";
+
+        $auto1->starten();
+        echo "<br/>";
+
+        $auto1->stoppen();
+
+?>
 </body>
 </html>
