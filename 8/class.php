@@ -29,9 +29,10 @@
             }
         }
 
-        $auto1 = new Fahrzeug("Brummi", "Mercedes");
+        $auto1 = new Fahrzeug("Gelb", "Mercedes");
         echo "<h1>" . 
-            $auto1->farbe 
+            $auto1->farbe . " " .
+            $auto1->hersteller
         . "</h1>";
 
         $auto1->starten();
