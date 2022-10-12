@@ -29,6 +29,15 @@
             }
         }
 
+        class Auto extends Fahrzeug{
+            public $kilometer = 0;
+
+            public function fahren($km){
+                $this->kilometer += $km;
+                echo "Neuer Stand: $this->kilometer";
+            }
+        }
+
         $auto1 = new Fahrzeug("Gelb", "Mercedes");
         echo "<h1>" . 
             $auto1->farbe . " " .
@@ -39,6 +48,12 @@
         echo "<br/>";
 
         $auto1->stoppen();
+
+        echo "<br/>";
+        $auto2 = new Auto("Rot", "Ford");
+        $auto2->fahren(100);
+        $auto2->fahren(100);
+        $auto2->fahren(100);
 
 ?>
 </body>
