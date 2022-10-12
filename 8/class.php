@@ -20,7 +20,7 @@
 
             public function starten(){
                 $this->gestartet = true;
-                echo "gestartet: " . $this->gestartet;;
+                echo "gestartet: " . $this->gestartet;
             }
 
             public function stoppen(){
