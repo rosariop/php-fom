@@ -27,4 +27,5 @@
 
     echo "$i Daten gefunden. <br />";
     echo "$a unter 1000, $b über 1000";
+    fclose($file);
 ?>
