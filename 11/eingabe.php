@@ -19,6 +19,9 @@
         <input type="radio" id="140" name="range" value=">=140">
         <label for="140">ü. 140€</label>
 
+        <input type="checkbox" id="scales" name="desc" value="desc">
+        <label for="scales">desc</label>
+
         <button type="submit">Submit</button>
 
     </form>
@@ -28,10 +31,17 @@
     if(isset($_POST["range"])){
         echo "<h1>isset</h1>";
         $rr = $_POST["range"];
+        $desc = $_POST["desc"];
 
         $con = mysqli_connect("", "root", "rootpw");
         mysqli_select_db($con, "uni");
-        $res = mysqli_query($con, "select * from fp where preis $rr");
+
+        if(isset($_POST["desc"])){
+            $res = mysqli_query($con, "select * from fp where preis $rr order by preis desc");
+        }else{
+            $res = mysqli_query($con, "select * from fp where preis $rr");
+        }
+
     
         $num = mysqli_num_rows($res);
     
@@ -42,6 +52,7 @@
                         "<td>hersteller</td>". 
                         "<td>typ</td>". 
                         "<td>prod</td>". 
+                        "<td>preis</td>". 
                     "</tr>";
     
         while($data = mysqli_fetch_assoc($res)){
@@ -50,6 +61,7 @@
                 "<td>". $data["hersteller"] ."</td>".
                 "<td>". $data["typ"] ."</td>".
                 "<td>". $data["prod"] . "</td>". 
+                "<td>". $data["preis"] . "€</td>". 
                 "</tr>";
         }
         echo "</table>";
