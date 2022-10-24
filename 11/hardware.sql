@@ -21,6 +21,6 @@ insert into fp (hersteller, typ, gb, preis, artnummer, prod)
 values ("Seagate", "310232A", 60, 122, "HDA-144", "2008-11-15");
 
 insert into fp (hersteller, typ, gb, preis, artnummer, prod)
-values ("IBM Corporation", "DJNA 372200", 240, 230, "HDA-140", "2008-16-15");
+values ("IBM Corporation", "DJNA 372200", 240, 230, "HDA-140", "2008-06-15");
 
 select * from fp;
