@@ -7,8 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
-        echo "Hallo " . $_COOKIE["name"];
+    <?php
+        if(isset($_COOKIE["name"])){
+            echo "Hallo " . $_COOKIE["name"];
+        }else {
+            echo "<h1>KEIN COOKIE GESETZT BRO</h1>";
+        }
     ?>
 </body>
 </html>
