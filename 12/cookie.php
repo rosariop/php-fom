@@ -23,7 +23,7 @@
             }
         ?>
         <label for="name">Name</label>
-
+        <br>
         <button type="submit">Submit</button>
     </form>
     <a href='/12/out.php'>output</a>
