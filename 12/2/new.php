@@ -30,9 +30,9 @@
   $forumsbeitrag=nl2br($forumsbeitrag);
   
   //Eintrag vornehmen:
-  $db=mysql_connect("localhost","root","")
+  $db=mysqli_connect("", "root", "rootpw")
     or die ("<b>Zur Zeit kein Connect zum Datenbankserver!</b>");
-  mysql_select_db("manitu")
+  mysqli_select_db($db, "uni")
     or die ("<b>Datenbank konnte nicht angesprochen werden</b>");
   $anfrage="INSERT INTO forum VALUES ('";
   $anfrage.="0', '0', '";
@@ -48,9 +48,9 @@
   $anfrage.="', '";
   $anfrage.=$forumsbeitrag;
   $anfrage.="', 'false')";
-  mysql_query($anfrage)
+  mysqli_query($db, $anfrage)
    or die ("<b>Fehler bei der Datenbankanfrage</b>");
- mysql_close($db);
+ mysqli_close($db);
  print ("<p>Vielen Dank f&uuml;r Ihren Beitrag!</p>");
  print ("<a href='index.php'>Zur&uuml;ck zum Forums&uuml;berblick</a>");
 

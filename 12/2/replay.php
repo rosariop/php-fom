@@ -18,13 +18,13 @@
 <td>
 <?php
  $id=$_GET['forums_id'];
- $db=mysql_connect("localhost","root","");
- mysql_select_db("manitu");
+ $db=mysqli_connect("", "root", "rootpw");
+ mysqli_select_db($db, "uni");
  $anfrage="SELECT * FROM forum WHERE beitrags_id LIKE '";
  $anfrage.=$id;
  $anfrage.="'";
- $ergebnis=mysql_query($anfrage);
- $zeile=mysql_fetch_row($ergebnis);
+ $ergebnis=mysqli_query($db, $anfrage);
+ $zeile=mysqli_fetch_row($ergebnis);
  $betreff="<input type='text' name='betreff' value='";
  $betreff.="Re: ";
  $betreff.=$zeile[6];

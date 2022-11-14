@@ -57,10 +57,13 @@
     function antwort_holen($id)
     {
 
+      $con = mysqli_connect("", "root", "rootpw");
+      mysqli_select_db($con, "uni");
+
       $anf = "SELECT * FROM forum WHERE beitrags_id='";
       $anf .= $id;
       $anf .= "'";
-      $er = mysqli_query($anf);
+      $er = mysqli_query($con, $anf);
       $z = mysqli_fetch_row($er);
       ausgabe($z);
     }

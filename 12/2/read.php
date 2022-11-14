@@ -5,13 +5,13 @@
 <div style="width: 400px">
 <?php
  $id=$_GET['forums_id'];
- $db=mysql_connect("localhost","root","");
- mysql_select_db("manitu");
+ $db=mysqli_connect("", "root", "rootpw");
+ mysqli_select_db($db, "uni");
  $anfrage="SELECT * FROM forum WHERE beitrags_id LIKE '";
  $anfrage.=$id;
  $anfrage.="'";
- $ergebnis=mysql_query($anfrage);
- $zeile=mysql_fetch_row($ergebnis);
+ $ergebnis=mysqli_query($db, $anfrage);
+ $zeile=mysqli_fetch_row($ergebnis);
  print ("<br><br><b>Betreff: </b>");
  print ($zeile[6]);
  print ("<br><b>von: </b>");
@@ -34,7 +34,7 @@
     antwort_holen($zeile[1]); 
     print ("</table>"); 
   }
- mysql_close($db);
+ mysqli_close($db);
  print ("<br><hr><br>");
  print ("<a href='replay.php?forums_id=");
  print ($id);
@@ -44,8 +44,8 @@ function antwort_holen($id) {
  $anf="SELECT * FROM forum WHERE beitrags_id='";
  $anf.=$id;
  $anf.="'";
- $er=mysql_query($anf);
- $z=mysql_fetch_row($er);
+ $er=mysqli_query($anf);
+ $z=mysqli_fetch_row($er);
  ausgabe($z);
 }
 function ausgabe($datensatz) {
